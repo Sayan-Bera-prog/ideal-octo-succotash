@@ -3,12 +3,12 @@ const noBtn = document.querySelector(".no-btn");
 const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
 
-// Change text and gif when the Yes button is clicked
+// Change text and gif when Yes button is clicked
 yesBtn.addEventListener("click", () => {
     question.innerHTML = "If living in a delusion is the only way I get to be with you, then I’ll stay lost in this dream forever—because even a beautiful lie is better than a reality without you..";
     gif.src = "./GIF/7D4B45132F3C1F60A993CAAC3DA681B4_video_dashinit.gif";
 
-    // Hide the No button
+    // Hide No button
     noBtn.style.display = "none";
 });
 
@@ -31,6 +31,9 @@ function moveButton() {
     noBtn.style.top = `${randomY}px`;
 }
 
-// Event listeners for desktop (hover) and mobile (tap)
+// Event listeners for desktop (hover) and mobile (continuous touch move)
 noBtn.addEventListener("mouseover", moveButton); // Works on desktop
-noBtn.addEventListener("touchstart", moveButton); // Works on mobile
+noBtn.addEventListener("touchmove", (e) => {
+    e.preventDefault(); // Prevent scrolling when moving the button
+    moveButton();
+}); // Works on mobile
