@@ -12,7 +12,7 @@ body {
 }
 
 .wrapper {
-    position: relative;
+    position: relative; /* Ensures .no-btn moves within */
     width: 90%;
     max-width: 500px;
     text-align: center;
@@ -20,7 +20,9 @@ body {
     padding: 30px 20px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden; /* Prevents button from going outside */
 }
+
 
 .question {
     font-size: 24px;
@@ -69,10 +71,14 @@ button:focus {
 }
 
 .no-btn {
-    position: absolute;
+    position: absolute; /* Allows movement */
+    left: 50%; /* Start at center */
+    top: 70%; /* Adjust position */
+    transform: translate(-50%, -50%); /* Center alignment */
     background-color: #ff4d4d;
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: top 0.2s, left 0.2s; /* Smooth movement */
 }
 
 .no-btn:hover {
