@@ -27,13 +27,16 @@ function moveButton() {
     const randomY = Math.random() * maxY;
 
     // Apply new position
+    noBtn.style.position = "absolute"; // Ensure absolute positioning
     noBtn.style.left = `${randomX}px`;
     noBtn.style.top = `${randomY}px`;
 }
 
-// Event listeners for desktop (hover) and mobile (continuous touch move)
-noBtn.addEventListener("mouseover", moveButton); // Works on desktop
-noBtn.addEventListener("touchmove", (e) => {
-    e.preventDefault(); // Prevent scrolling when moving the button
+// **Fix for Desktop**: Move button on hover
+noBtn.addEventListener("mouseover", moveButton);
+
+// **Fix for Mobile**: Move button every time user taps
+noBtn.addEventListener("touchstart", (e) => {
+    e.preventDefault(); // Prevent scrolling on touch
     moveButton();
-}); // Works on mobile
+});
