@@ -85,3 +85,15 @@ button:focus {
     display: block;
     margin: 20px auto; /* Center the GIF */
 }
+
+@media (max-width: 600px) {
+    .wrapper {
+        width: 100%;
+        text-align: center;
+    }
+
+    .yes-btn, .no-btn {
+        width: 80%; /* Buttons fit smaller screens */
+    }
+}
+
