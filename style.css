@@ -92,8 +92,20 @@ button:focus {
         text-align: center;
     }
 
+    .gif {
+        max-width: 90%;  /* Makes GIF responsive */
+        height: auto;
+    }
+
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .yes-btn, .no-btn {
-        width: 80%; /* Buttons fit smaller screens */
+        width: 80%;
+        font-size: 18px;
     }
 }
 
